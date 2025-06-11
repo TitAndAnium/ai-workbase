@@ -1,0 +1,17 @@
+/**
+ * Test Script for Tag Generator
+ * Reads sample input JSON and logs the result.
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { generateTags } = require('./tag-generator');
+
+const inputPath = path.join(__dirname, '../samples/tag-generator-test.json');
+const rawData = fs.readFileSync(inputPath, 'utf-8');
+const inputData = JSON.parse(rawData);
+
+const tags = generateTags(inputData);
+
+console.log('🎯 Generated Tags:');
+tags.forEach((tag, i) => console.log(`${i + 1}. ${tag}`));
