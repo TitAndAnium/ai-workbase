@@ -1,5 +1,12 @@
-# Automation Playbooks
+# AI Automation Playbooks
 
-Real-world automation setups using no-code tools like Make, Zapier, Airtable, Notion and AI integrations.
+Not fancy. Just functional.
 
-These are modular, client-ready, and designed to scale.
+This folder contains modular AI automation workflows I use or prototype — think: multi-step GPT pipelines, integrated tools like Notion, Airtable, Zapier, Claude, Make, Typeform, Google Sheets, or custom endpoints.
+
+Everything here is:
+- Battle-tested (or actively battle-tested)
+- System-first (no fluff, no AI-for-the-sake-of-AI)
+- Easy to fork, reuse or adapt
+
+Each subfolder
