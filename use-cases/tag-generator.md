@@ -33,19 +33,21 @@ Because guessing tags is inefficient, inconsistent, and unscalable. This script 
   ]
 }
 🛠️ Output Example
-1. crewneck sweatshirt
-2. wedding
-3. bride-to-be
-4. bride-to-be gift
-5. wedding gift
-6. minimalist style
-7. warm tone
-8. wifey
-9. oversized
-10. comfy
-11. fleece
-12. trending
-13. handmade
+
+- crewneck sweatshirt  
+- wedding  
+- bride-to-be  
+- bride-to-be gift  
+- wedding gift  
+- minimalist style  
+- warm tone  
+- wifey  
+- oversized  
+- comfy  
+- fleece  
+- trending  
+- handmade  
+
 💡 Usage Tips
 Keep your features and callouts fields short and punchy — single sentences work best.
 
