@@ -1,36 +1,39 @@
-// gift-mode-generator.js
-
 /**
- * Gift Mode Copy Assistant
- * Generates a rich, emotionally resonant Etsy product description
- * tailored for Etsy’s Gift Mode and search algorithm.
- *
+ * Gift Mode Listing Generator
+ * Generates structured Etsy listing copy based on provided input fields.
+ * Now with default fallback handling and safe field parsing.
+ * 
  * Author: Tayfun van Zantvoort
  */
 
-function generateGiftModeDescription({ productType, recipient, occasion, tone, style, features, callouts }) {
-  const readableFeatures = features && features.length > 0
-    ? features.map(f => `- ${f}`).join('\n')
-    : '';
+function generateListing(data) {
+  const safe = (val, fallback = '') => (typeof val === 'string' ? val : fallback);
+  const safeArray = (arr) => (Array.isArray(arr) ? arr : []);
 
-  return `
+  const productType = safe(data.productType, 'product');
+  const recipient = safe(data.recipient, 'gift recipient');
+  const occasion = safe(data.occasion, 'special moment');
+  const tone = safe(data.tone, 'thoughtful');
+  const style = safe(data.style, 'clean');
+
+  const features = safeArray(data.features);
+  const callouts = safeArray(data.callouts);
+
+  const description = `
 ::: Overview :::
-Looking for the perfect ${occasion.toLowerCase()} gift for a ${recipient}? This ${productType} is designed with care to make that special moment unforgettable. Whether you're gifting or treating yourself, this piece blends emotion with timeless style.
+This ${productType} is the perfect gift for any ${occasion}, especially for the ${recipient}. Designed in a ${style} style with a ${tone} touch, it's crafted to feel personal and meaningful.
 
 ::: Features :::
-${readableFeatures}
+${features.map((f) => '- ' + f).join('\n') || '- [No features listed]'}
 
-::: Why it's a great gift :::
-Every ${productType} in this collection is thoughtfully crafted to create lasting memories. It's not just about the product, it's about the moment — wrapped in a gesture that speaks volumes.
-
-::: Style & Tone :::
-Expect a ${tone}-toned vibe with a ${style} touch. This isn't generic — it's uniquely tailored to resonate with modern gift-givers who care about quality, meaning, and aesthetics.
+::: Gift Highlights :::
+${callouts.map((c) => '- ' + c).join('\n') || '- [No callouts listed]'}
 
 ::: Shipping and Processing :::
-Fast production and worldwide shipping available. Need it in time for the big day? Let us know — we're here to help.
-  `.trim();
+All items are made to order. Production time: 1–3 business days. Shipping options available at checkout.
+`.trim();
+
+  return description;
 }
 
-// Export function
-module.exports = { generateGiftModeDescription };
-
+module.exports = { generateListing };
