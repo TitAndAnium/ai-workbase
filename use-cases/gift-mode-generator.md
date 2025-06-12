@@ -70,5 +70,3 @@ node functions/gift-mode-generator.js
 Make sure you `console.log()` the result of `generateGiftModeDescription()`.
 
 ---
-
-Let me know once it's in — dan gaan we direct verder met het structureel vullen van de volgende module of sampletest. Je houdt tempo, consistentie én kwaliteit.
