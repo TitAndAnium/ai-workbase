@@ -1,8 +1,21 @@
+# Node modules
 node_modules/
-.env
-.DS_Store
+
+# Test output / logs
 *.log
-*.zip
-.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
 .vscode/
-__MACOSX/
+
+# Compiled files
+*.out
+*.exe
+
+# Backup & temp
+*.bak
+*.tmp
+*.swp
